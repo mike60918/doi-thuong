@@ -1,0 +1,172 @@
+// 情境內容（全部原創）。
+// 欄位：zh 繁體中文、py 漢語拼音、vi 越南語、hv 漢越音（沒有就留空字串）。
+// reviewed: 越南語母語者審過後改成 true，APP 會拿掉「chưa duyệt」標記。
+// 新增一課：複製一個物件、改 id 與內容即可，不用動程式。
+
+export const GROUPS = [
+  { id: 'an-uong', icon: '🧋', vi: 'Ăn uống & Mua sắm', zh: '飲食與購物' },
+  { id: 'ban-be', icon: '💬', vi: 'Bạn bè & Đồng nghiệp', zh: '朋友與同事' },
+  { id: 'y-te', icon: '🏥', vi: 'Y tế & Thủ tục', zh: '醫療與手續' },
+];
+
+export const SCENARIOS = [
+  {
+    id: 'tra-sua',
+    group: 'an-uong',
+    level: 'A2',
+    reviewed: false,
+    vi: 'Gọi đồ uống ở tiệm trà sữa',
+    zh: '在手搖飲店點飲料',
+    intro: 'Tiệm trà sữa ở Đài Loan hỏi rất nhanh: độ ngọt, lượng đá, mang đi hay uống tại chỗ. Thuộc mấy câu này là gọi được ở mọi tiệm.',
+    lines: [
+      { who: 'Nhân viên', zh: '你好，請問要喝什麼？', py: 'Nǐ hǎo, qǐngwèn yào hē shénme?', vi: 'Xin chào, bạn muốn uống gì ạ?' },
+      { who: 'Bạn', me: true, zh: '我要一杯珍珠奶茶，大杯。', py: 'Wǒ yào yì bēi zhēnzhū nǎichá, dà bēi.', vi: 'Cho mình một ly trà sữa trân châu, ly lớn.' },
+      { who: 'Nhân viên', zh: '甜度冰塊呢？', py: 'Tiándù bīngkuài ne?', vi: 'Độ ngọt và đá thế nào ạ?' },
+      { who: 'Bạn', me: true, zh: '半糖少冰。', py: 'Bàn táng shǎo bīng.', vi: 'Nửa đường, ít đá.' },
+      { who: 'Nhân viên', zh: '這邊用還是帶走？', py: 'Zhèbiān yòng háishì dàizǒu?', vi: 'Dùng tại đây hay mang đi ạ?' },
+      { who: 'Bạn', me: true, zh: '帶走，不用袋子。', py: 'Dàizǒu, búyòng dàizi.', vi: 'Mang đi, không cần túi.' },
+      { who: 'Nhân viên', zh: '好的，這樣五十五元。', py: 'Hǎo de, zhèyàng wǔshíwǔ yuán.', vi: 'Vâng, tổng cộng 55 Đài tệ.' },
+      { who: 'Bạn', me: true, zh: '可以用 LINE Pay 嗎？', py: 'Kěyǐ yòng LINE Pay ma?', vi: 'Trả bằng LINE Pay được không?' },
+      { who: 'Nhân viên', zh: '可以喔，請掃這裡。', py: 'Kěyǐ o, qǐng sǎo zhèlǐ.', vi: 'Được ạ, mời bạn quét ở đây.' },
+    ],
+    vocab: [
+      { zh: '珍珠奶茶', py: 'zhēnzhū nǎichá', hv: 'trân châu nãi trà', vi: 'trà sữa trân châu' },
+      { zh: '甜度', py: 'tiándù', hv: 'điềm độ', vi: 'độ ngọt' },
+      { zh: '冰塊', py: 'bīngkuài', hv: 'băng khối', vi: 'đá viên' },
+      { zh: '半糖', py: 'bàn táng', hv: 'bán đường', vi: 'nửa đường' },
+      { zh: '少冰', py: 'shǎo bīng', hv: 'thiểu băng', vi: 'ít đá' },
+      { zh: '帶走', py: 'dàizǒu', hv: 'đới tẩu', vi: 'mang đi' },
+      { zh: '袋子', py: 'dàizi', hv: 'đại tử', vi: 'cái túi' },
+    ],
+    notes: [
+      { zh: '全糖・少糖・半糖・微糖・無糖', py: 'quán táng · shǎo táng · bàn táng · wēi táng · wú táng', vi: 'Năm mức ngọt thường gặp, từ ngọt nhất đến không đường. Người Đài hay gọi 微糖 (ít ngọt) hoặc 無糖 (không đường).' },
+      { zh: '正常冰・少冰・微冰・去冰', py: 'zhèngcháng bīng · shǎo bīng · wēi bīng · qù bīng', vi: 'Bốn mức đá. 去冰 là không bỏ đá nhưng nước vẫn lạnh; muốn uống ấm thì nói 溫的 (wēn de).' },
+      { zh: '可以喔', py: 'kěyǐ o', vi: 'Chữ 喔 ở cuối câu làm giọng nhẹ nhàng, thân thiện hơn. Bạn sẽ nghe nó khắp nơi ở Đài Loan: 好喔, 謝謝喔, 小心喔.' },
+    ],
+    quiz: [
+      { q: 'Bạn muốn trà không đường. Bạn nói thế nào?', options: ['無糖', '全糖', '去冰', '少冰'], answer: 0, explain: '無糖 (wú táng) = không đường.' },
+      { q: 'Nhân viên hỏi 「這邊用還是帶走？」. Họ muốn biết điều gì?', options: ['Bạn uống tại chỗ hay mang đi', 'Bạn trả tiền mặt hay thẻ', 'Bạn muốn ly lớn hay nhỏ', 'Bạn có cần ống hút không'], answer: 0, explain: '這邊用 = dùng tại đây, 帶走 = mang đi.' },
+      { q: 'Bạn muốn nước vẫn lạnh nhưng không có đá viên. Bạn chọn:', options: ['去冰', '少冰', '溫的', '正常冰'], answer: 0, explain: '去冰 (qù bīng) = bỏ đá.' },
+    ],
+  },
+
+  {
+    id: 'cua-hang-tien-loi',
+    group: 'an-uong',
+    level: 'A2',
+    reviewed: false,
+    vi: 'Tính tiền ở cửa hàng tiện lợi',
+    zh: '在便利商店結帳',
+    intro: 'Ở 7-ELEVEN hay FamilyMart, nhân viên thường hỏi liên tiếp ba câu: túi, hâm nóng, hóa đơn. Nghe quen là trả lời được ngay.',
+    lines: [
+      { who: 'Nhân viên', zh: '你好，需要袋子嗎？', py: 'Nǐ hǎo, xūyào dàizi ma?', vi: 'Xin chào, bạn có cần túi không?' },
+      { who: 'Bạn', me: true, zh: '不用，謝謝。', py: 'Búyòng, xièxie.', vi: 'Không cần, cảm ơn.' },
+      { who: 'Nhân viên', zh: '便當要加熱嗎？', py: 'Biàndāng yào jiārè ma?', vi: 'Cơm hộp có cần hâm nóng không?' },
+      { who: 'Bạn', me: true, zh: '要，麻煩你。', py: 'Yào, máfan nǐ.', vi: 'Có, phiền bạn nhé.' },
+      { who: 'Nhân viên', zh: '有會員或載具嗎？', py: 'Yǒu huìyuán huò zàijù ma?', vi: 'Bạn có thẻ thành viên hoặc mã lưu hóa đơn điện tử không?' },
+      { who: 'Bạn', me: true, zh: '沒有，發票印出來就好。', py: 'Méiyǒu, fāpiào yìn chūlái jiù hǎo.', vi: 'Không có, in hóa đơn ra là được.' },
+      { who: 'Nhân viên', zh: '這樣一共八十九元。', py: 'Zhèyàng yígòng bāshíjiǔ yuán.', vi: 'Tổng cộng 89 Đài tệ.' },
+      { who: 'Bạn', me: true, zh: '我用悠遊卡。', py: 'Wǒ yòng Yōuyóukǎ.', vi: 'Mình trả bằng thẻ EasyCard.' },
+      { who: 'Nhân viên', zh: '好，請靠卡。便當小心燙喔。', py: 'Hǎo, qǐng kào kǎ. Biàndāng xiǎoxīn tàng o.', vi: 'Vâng, mời chạm thẻ. Cơm hộp nóng, cẩn thận nhé.' },
+    ],
+    vocab: [
+      { zh: '便當', py: 'biàndāng', hv: 'tiện đương', vi: 'cơm hộp' },
+      { zh: '加熱', py: 'jiārè', hv: 'gia nhiệt', vi: 'hâm nóng' },
+      { zh: '會員', py: 'huìyuán', hv: 'hội viên', vi: 'thành viên' },
+      { zh: '載具', py: 'zàijù', hv: 'tải cụ', vi: 'mã lưu hóa đơn điện tử' },
+      { zh: '發票', py: 'fāpiào', hv: 'phát phiếu', vi: 'hóa đơn' },
+      { zh: '悠遊卡', py: 'Yōuyóukǎ', hv: '', vi: 'thẻ EasyCard' },
+      { zh: '一共', py: 'yígòng', hv: 'nhất cộng', vi: 'tổng cộng' },
+    ],
+    notes: [
+      { zh: '載具', py: 'zàijù', vi: 'Mã vạch trên điện thoại để lưu hóa đơn điện tử, không cần in giấy. Nếu chưa có, cứ nói 沒有 là xong.' },
+      { zh: '發票', py: 'fāpiào', vi: 'Hóa đơn ở Đài Loan có dãy số dự thưởng, hai tháng mở thưởng một lần. Vì vậy đừng vứt hóa đơn ngay.' },
+      { zh: '⋯⋯就好', py: '… jiù hǎo', vi: 'Mẫu câu rất hay dùng, nghĩa là “… là được rồi”. Ví dụ: 這樣就好 (thế này là được), 一個就好 (một cái là được).' },
+    ],
+    quiz: [
+      { q: 'Nhân viên hỏi 「要加熱嗎？」. Họ đang hỏi gì?', options: ['Có cần hâm nóng không', 'Có cần túi không', 'Có thẻ thành viên không', 'Có cần đũa không'], answer: 0, explain: '加熱 (jiārè) = hâm nóng.' },
+      { q: 'Bạn chỉ cần một cái thôi. Câu nào tự nhiên nhất?', options: ['一個就好', '一個不好', '一個沒有', '一個帶走'], answer: 0, explain: 'Mẫu 「⋯⋯就好」 = “… là được rồi”.' },
+      { q: 'Bạn không có 載具. Trả lời ngắn gọn nhất là:', options: ['沒有', '不用', '帶走', '麻煩你'], answer: 0, explain: 'Câu hỏi là 「有⋯⋯嗎？」 nên trả lời 有 hoặc 沒有.' },
+    ],
+  },
+
+  {
+    id: 'tan-gau-dong-nghiep',
+    group: 'ban-be',
+    level: 'B1',
+    reviewed: false,
+    vi: 'Tán gẫu với đồng nghiệp',
+    zh: '跟同事聊天',
+    intro: 'Sách giáo khoa không dạy mấy từ này, nhưng người Đài dùng mỗi ngày. Chú ý: đây là cách nói thân mật, chỉ dùng với bạn bè và đồng nghiệp ngang hàng.',
+    lines: [
+      { who: 'Tiểu Mỹ', zh: '欸，你昨天有看到群組的訊息嗎？', py: 'Ēi, nǐ zuótiān yǒu kàndào qúnzǔ de xùnxí ma?', vi: 'Ê, hôm qua bạn có thấy tin nhắn trong nhóm không?' },
+      { who: 'Bạn', me: true, zh: '有啊，老闆說週六要加班，超扯。', py: 'Yǒu a, lǎobǎn shuō zhōuliù yào jiābān, chāo chě.', vi: 'Có chứ, sếp nói thứ Bảy phải tăng ca, vô lý hết sức.' },
+      { who: 'Tiểu Mỹ', zh: '真的假的？我傻眼。', py: 'Zhēn de jiǎ de? Wǒ shǎyǎn.', vi: 'Thật hả? Mình cạn lời luôn.' },
+      { who: 'Bạn', me: true, zh: '而且沒有加班費喔。', py: 'Érqiě méiyǒu jiābānfèi o.', vi: 'Mà còn không có tiền tăng ca nữa đó.' },
+      { who: 'Tiểu Mỹ', zh: '太誇張了吧！', py: 'Tài kuāzhāng le ba!', vi: 'Quá đáng thật!' },
+      { who: 'Bạn', me: true, zh: '算了，下班要不要去吃熱炒？', py: 'Suànle, xiàbān yào bú yào qù chī rèchǎo?', vi: 'Thôi kệ, tan làm đi ăn quán xào kiểu Đài không?' },
+      { who: 'Tiểu Mỹ', zh: '好啊，我請客。', py: 'Hǎo a, wǒ qǐngkè.', vi: 'Được đó, mình bao.' },
+      { who: 'Bạn', me: true, zh: '讚喔！那六點門口見。', py: 'Zàn o! Nà liù diǎn ménkǒu jiàn.', vi: 'Tuyệt! Vậy 6 giờ gặp ở cổng nhé.' },
+    ],
+    vocab: [
+      { zh: '群組', py: 'qúnzǔ', hv: 'quần tổ', vi: 'nhóm chat' },
+      { zh: '加班', py: 'jiābān', hv: 'gia ban', vi: 'tăng ca' },
+      { zh: '超扯', py: 'chāo chě', hv: '', vi: 'vô lý hết sức (khẩu ngữ)' },
+      { zh: '傻眼', py: 'shǎyǎn', hv: '', vi: 'sững sờ, cạn lời (khẩu ngữ)' },
+      { zh: '誇張', py: 'kuāzhāng', hv: 'khoa trương', vi: 'quá đáng, quá lố' },
+      { zh: '算了', py: 'suànle', hv: '', vi: 'thôi, bỏ đi' },
+      { zh: '請客', py: 'qǐngkè', hv: 'thỉnh khách', vi: 'mời, bao' },
+      { zh: '讚', py: 'zàn', hv: 'tán', vi: 'tuyệt, đỉnh' },
+    ],
+    notes: [
+      { zh: '真的假的？', py: 'Zhēn de jiǎ de?', vi: 'Nghĩa đen là “thật hay giả?”. Dùng khi ngạc nhiên, giống “Thật hả?”. Không phải là nghi ngờ người nói.' },
+      { zh: '超＋tính từ', py: 'chāo', vi: '超 nghĩa là “siêu, cực kỳ”, giới trẻ dùng thay cho 很 và 非常: 超好吃 (siêu ngon), 超累 (mệt muốn xỉu).' },
+      { zh: '超扯・傻眼', py: 'chāo chě · shǎyǎn', vi: 'Hai từ này mang ý chê bai. Nói với bạn bè thì được, nhưng đừng nói trước mặt sếp hoặc người lớn tuổi.' },
+    ],
+    quiz: [
+      { q: 'Bạn bè kể một chuyện khó tin. Bạn phản ứng thế nào cho tự nhiên?', options: ['真的假的？', '麻煩你。', '不用，謝謝。', '請靠卡。'], answer: 0, explain: '真的假的？ = “Thật hả?”' },
+      { q: 'Từ nào KHÔNG nên nói trước mặt sếp?', options: ['超扯', '謝謝', '好的', '請問'], answer: 0, explain: '超扯 là khẩu ngữ, mang ý chê bai.' },
+      { q: '「我請客」 nghĩa là gì?', options: ['Mình bao', 'Mình bận', 'Mình là khách', 'Mình về trước'], answer: 0, explain: '請客 (qǐngkè) = mời, trả tiền cho người khác.' },
+    ],
+  },
+
+  {
+    id: 'phong-kham',
+    group: 'y-te',
+    level: 'A2',
+    reviewed: false,
+    vi: 'Đăng ký khám ở phòng khám',
+    zh: '在診所掛號',
+    intro: 'Bị cảm, đau họng thì người Đài thường đến phòng khám gần nhà. Việc đầu tiên là đăng ký ở quầy.',
+    lines: [
+      { who: 'Quầy', zh: '你好，第一次來嗎？', py: 'Nǐ hǎo, dì yī cì lái ma?', vi: 'Xin chào, bạn đến lần đầu phải không?' },
+      { who: 'Bạn', me: true, zh: '對，我要掛號。', py: 'Duì, wǒ yào guàhào.', vi: 'Vâng, tôi muốn đăng ký khám.' },
+      { who: 'Quầy', zh: '健保卡跟居留證借我一下。', py: 'Jiànbǎokǎ gēn jūliúzhèng jiè wǒ yíxià.', vi: 'Cho tôi xem thẻ bảo hiểm y tế và thẻ cư trú một chút.' },
+      { who: 'Bạn', me: true, zh: '好，在這裡。', py: 'Hǎo, zài zhèlǐ.', vi: 'Vâng, đây ạ.' },
+      { who: 'Quầy', zh: '今天哪裡不舒服？', py: 'Jīntiān nǎlǐ bù shūfu?', vi: 'Hôm nay bạn khó chịu ở đâu?' },
+      { who: 'Bạn', me: true, zh: '我喉嚨痛，還有一點發燒。', py: 'Wǒ hóulóng tòng, hái yǒu yìdiǎn fāshāo.', vi: 'Tôi đau họng, còn hơi sốt nữa.' },
+      { who: 'Quầy', zh: '掛號費一百五十元。你是五號，請先坐一下。', py: 'Guàhàofèi yìbǎi wǔshí yuán. Nǐ shì wǔ hào, qǐng xiān zuò yíxià.', vi: 'Phí đăng ký 150 Đài tệ. Bạn số 5, mời ngồi chờ một chút.' },
+      { who: 'Bạn', me: true, zh: '大概要等多久？', py: 'Dàgài yào děng duōjiǔ?', vi: 'Khoảng bao lâu nữa ạ?' },
+      { who: 'Quầy', zh: '前面還有兩個人，很快。', py: 'Qiánmiàn hái yǒu liǎng ge rén, hěn kuài.', vi: 'Phía trước còn hai người, nhanh thôi.' },
+    ],
+    vocab: [
+      { zh: '掛號', py: 'guàhào', hv: 'quải hiệu', vi: 'đăng ký khám' },
+      { zh: '健保卡', py: 'jiànbǎokǎ', hv: '', vi: 'thẻ bảo hiểm y tế' },
+      { zh: '居留證', py: 'jūliúzhèng', hv: 'cư lưu chứng', vi: 'thẻ cư trú' },
+      { zh: '不舒服', py: 'bù shūfu', hv: '', vi: 'khó chịu, không khỏe' },
+      { zh: '喉嚨', py: 'hóulóng', hv: 'hầu lung', vi: 'cổ họng' },
+      { zh: '發燒', py: 'fāshāo', hv: 'phát thiêu', vi: 'sốt' },
+      { zh: '多久', py: 'duōjiǔ', hv: '', vi: 'bao lâu' },
+    ],
+    notes: [
+      { zh: '借我一下', py: 'jiè wǒ yíxià', vi: 'Nghĩa đen là “cho tôi mượn một chút”, nhưng ở quầy thì chỉ là cách nói lịch sự của “cho tôi xem”. Họ sẽ trả lại ngay.' },
+      { zh: '哪裡不舒服？', py: 'Nǎlǐ bù shūfu?', vi: 'Câu bác sĩ và y tá hỏi nhiều nhất. Trả lời bằng: bộ phận + 痛 (đau), ví dụ 頭痛 (đau đầu), 肚子痛 (đau bụng).' },
+      { zh: '請先坐一下', py: 'qǐng xiān zuò yíxià', vi: '一下 làm câu nhẹ nhàng hơn, nghĩa là “một chút”. Rất hay gặp: 等一下 (chờ chút), 看一下 (xem chút).' },
+    ],
+    quiz: [
+      { q: 'Bạn bị đau bụng. Bạn nói với y tá:', options: ['我肚子痛', '我喉嚨痛', '我要掛號', '我發燒'], answer: 0, explain: '肚子 (dùzi) = bụng, 痛 (tòng) = đau.' },
+      { q: 'Nhân viên nói 「健保卡借我一下」. Bạn nên làm gì?', options: ['Đưa thẻ bảo hiểm y tế cho họ xem', 'Cho họ mượn tiền', 'Ngồi chờ', 'Trả phí đăng ký'], answer: 0, explain: '借我一下 ở đây là “cho tôi xem một chút”.' },
+      { q: 'Bạn muốn hỏi phải chờ bao lâu. Câu nào đúng?', options: ['要等多久？', '哪裡不舒服？', '第一次來嗎？', '在這裡。'], answer: 0, explain: '等 (děng) = chờ, 多久 (duōjiǔ) = bao lâu.' },
+    ],
+  },
+];
